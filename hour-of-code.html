@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hour of Code: Teaching Algorithms to Kids</title>
+    <link rel="stylesheet" href="styles.css">  
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+<body>
+    <header>
+        <div id="logo-container">
+            <img src="Logowithoutbackground.png" alt="Website Logo" id="logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Introduction</a></li>
+                <li><a href="hour-of-code.html">Hour of Code</a></li>
+                <li><a href="team-members.html">Team Members</a></li>
+                <li><a href="code-artist.html">Code Artist</a></li>
+                <li><a href="web-project.html">Web Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="center-h1" style="font-family: 'Times New Roman', sans-serif;"><b>Hour of Code: Teaching Algorithms to Kids</b></h1>
+        
+        <section id="introduction">
+            <h2>What is Hour of Code?</h2>
+            <p>Hour of Code is a global movement to introduce students to the world of computer science and programming. It helps to teach children (the ones who are interested in programming) how does algorithm works. Our goal is to inspire the next generation of tech leaders by teaching kids how to code using fun activities.</p>
+        </section>
+
+        <section id="our-activities">
+            <h2>Our Activities at the School</h2>
+            <p>We visited the local school and taught children fundamental algorithms and coding concepts using the engaging and interactive activities from <a href="https://studio.code.org/s/artist" target="_blank">code.org</a>. The children learned basic programming skills, problem-solving techniques, and logical thinking.</p>
+            
+            <div class="activity-gallery">
+                <h3>Photos from the Event:</h3>
+                
+                <img src="hourofcodephoto1.jpeg" alt="Group Photo with children and class teacher" class="activity-photo" style="width: 300px; height: auto;">
+                <img src="hourofcodephoto2.jpeg" alt="Children learning to code" class="activity-photo" style="width: 300px; height: auto;">
+                <img src="hourofcodephoto3.jpeg" alt="Kids using code.org" class="activity-photo" style="width: 300px; height: auto;">
+                
+            </div>
+        </section>
+
+        <section id="learning-outcomes">
+            <h2>Learning Outcomes</h2>
+            <p>By participating in Hour of Code, the children gained the following skills:</p>
+            <ul>
+                <li>Understanding the basics of coding and algorithms</li>
+                <li>Problem-solving and logical thinking skills</li>
+                <li>Creativity and innovation in technology</li>
+                <li>Improved teamwork and collaboration</li>
+            </ul>
+        </section>
+
+        <section id="get-involved">
+            <h2>How Can You Get Involved?</h2>
+            <p>If you're interested in hosting your own Hour of Code event or learning more about programming, visit <a href="https://hourofcode.com" target="_blank">Hour of Code</a> to get started!</p>
+            <p>You can also explore other fun coding activities on <a href="https://studio.code.org" target="_blank">code.org</a>.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p style="font-family: 'Times New Roman', sans-serif;">Created by Turan Sadigli, Fatima Hasanzada, and Sanan Badalov</p>
+    </footer>
+
+    <script type="text/javascript">
+        function previewImage(event) {
+            const previewContainer = document.getElementById("imagePreview");
+            previewContainer.innerHTML = "";
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.classList.add("activity-photo");
+                    previewContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>

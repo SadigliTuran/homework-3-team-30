@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homework 3: Programming art</title>
+        <link rel="stylesheet" href="styles.css">  
+        <script type="text/javascript" src="scripts.js"></script>      
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <img src="Logowithoutbackground.png" alt="Website Logo" id="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Introduction</a></li>
+                    <li><a href="hour-of-code.html">Hour of Code</a></li>
+                    <li><a href="team-members.html">Team Members</a></li>
+                    <li><a href="code-artist.html">Code Artist</a></li>
+                    <li><a href="web-project.html">Web Project</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main>
+            <h1 class="center-h1" style="font-family: 'Times New Roman', sans-serif;"><b>Code Artist: Creativity with Code</b></h1>
+            <section id="introduction">
+                <h2>What is Code Art?</h2>
+                <p>Coding is not just about logic and algorithms — it is also about creativity. Code art combines programming with imagination to create stunning visuals, animations, and interactive designs. Here are some examples for Arts which created by Code Artists.</p>
+            </section>
+    
+            <section id="projects">
+                <h2>Featured Projects <li><a href="https://www.shadertoy.com/" target="_blank">Source</a></li></h2>
+                <div class="gallery">
+                    <video width="640" height="360" controls>
+                        <source src="Heartbeat.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <video width="640" height="360" controls>
+                        <source src="4D.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+
+            <section id="our-code-art">
+                <h2>Our Code Art:</h2>
+
+                <div style="text-align:center; margin-top: 30px;">
+                    <canvas id="art-canvas" width="640" height="480">
+                        Sorry ... your browser doesn't support the HTML5 canvas element.
+                    </canvas>
+                </div>
+            </section>
+
+            <section id="get-started">
+                <h2>Get Started with Code Art</h2>
+                <p>Want to learn how does algorithm work and then create your own? Start with code.org! (Check the link below)</p>
+                <ul>
+                    <li><a href="https://studio.code.org/s/artist/" target="_blank">code.org - Check the Code Artist in Code.org!</a></li>
+                </ul>
+            </section>
+
+            <script type="text/javascript">
+                let canvas = document.getElementById("art-canvas");
+                let context = canvas.getContext("2d");
+
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+
+                const uniqueColor = "rgb(34, 193, 195)";
+
+                function drawSpiral() {
+                    context.clearRect(0, 0, canvas.width, canvas.height);
+
+                    const centerX = canvas.width / 2;
+                    const centerY = canvas.height / 2;
+                    const maxRadius = Math.min(canvas.width, canvas.height) / 3;
+                    const numShapes = 300;
+                    const shapeSize = 10;
+
+                    context.fillStyle = uniqueColor;
+
+                    for (let i = 0; i < numShapes; i++) {
+                        const angle = (i / numShapes) * Math.PI * 6;
+                        const radius = (i / numShapes) * maxRadius;
+
+                        const x = centerX + radius * Math.cos(angle);
+                        const y = centerY + radius * Math.sin(angle);
+
+                        if (i % 3 === 0) {
+                            context.beginPath();
+                            context.arc(x, y, shapeSize, 0, Math.PI * 2);
+                            context.fill();
+                        } else if (i % 3 === 1) {
+                            context.fillRect(x - shapeSize / 2, y - shapeSize / 2, shapeSize, shapeSize);
+                        } else {
+                            context.beginPath();
+                            context.moveTo(x, y - shapeSize);
+                            context.lineTo(x - shapeSize, y + shapeSize);
+                            context.lineTo(x + shapeSize, y + shapeSize);
+                            context.closePath();
+                            context.fill();
+                        }
+                    }
+                }
+
+                drawSpiral();
+                window.addEventListener("resize", function() {
+                    canvas.width = window.innerWidth;
+                    canvas.height = window.innerHeight;
+                    drawSpiral();
+                });
+            </script>
+        </main>
+
+        <footer>
+            <p style="font-family: 'Times New Roman', sans-serif;">Created by Turan Sadigli, Fatima Hasanzada, and Sanan Badalov</p>
+        </footer>
+    </body>          
+</html>

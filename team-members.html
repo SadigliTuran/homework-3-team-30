@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<!-- 
+    SITE 1101 Principles of Information Systems 
+    (c)2024 by Turan Sadigli
+    Submitted in partial fulfillment of the requirements of the course.
+-->
+
+<html>
+    <head>
+        <title>Homework 3: Team Members</title>
+        <link rel="stylesheet" href="styles.css">  
+        <script type="text/javascript" src="scripts.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <img src="Logowithoutbackground.png" alt="Website Logo" id="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Introduction</a></li>
+                    <li><a href="hour-of-code.html">Hour of Code</a></li>
+                    <li><a href="team-members.html">Team Members</a></li>
+                    <li><a href="code-artist.html">Code Artist</a></li>
+                    <li><a href="web-project.html">Web Project</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1 class="center-h1" style="font-family: 'Times New Roman', sans-serif;"><b>Team Members</b></h1>
+            <h2>Who Are We?</h2>
+            
+            <section class="team-member">
+                <img src="sadigli.jpg" alt="Groupmate 1" class="team-member-photo" style="height: 150px; width: 200px;">
+                <h2>Turan Sadigli</h2>
+                <p>Hi, my name is Turan Sadigli. I am graduated from ADA School and currently study at ADA University. My faculty is Bacholer of Science in Computer Science, which is under the School of Information Techonology and Engineering (SITE). I love listening to podcasts, studying Physics and Math, and drinking tea while eating Kunefe. My favourite coffee is Mocha. I am the Team Leader of Team 30, as known as Web Guardians. You can contact me via:
+                <br><b><i>Email: sadiglituran10@gmail.com OR tsadigli17745@ada.edu.az</i></b></br></p>
+                <br><b><i>Instagram: @turansdg OR @ada_siteteam30</i></b></br></p>
+            </section>
+            
+            <section class="team-member">
+                <img src="sanan.jpeg" alt="Groupmate 2" class="team-member-photo" style="height: 250px; width: 200px;">
+                <h2>Sanan Badalov</h2>
+                <p>Hi, I am Badalov Sanan. I am undergraduated student of ADA University. Accepted to ADA via DIM exams. I accepted to Information Technologies (IT), and it's my second year in ADA University. I love to talk and listen to succesful & hard working people which passionate about what they do. My hobby is watching designer shows and clothing art, Clothes are part of my life. My favourite designer is Belgian fashion designer Raf Simons.</p>
+            </section>
+
+            <section class="team-member">
+                <img src="fatima.png" alt="Groupmate 3" class="team-member-photo" style="height: 200px; width: 200px;">
+                <h2>Fatima Hasanzada</h2>
+                <p>Hello! My name is Fatima Hasanzada, and I am a first year undergraduate student at ADA University. I am studying Information Technology,and I was admitted to ADA University through the SAT exam, which helped me grow both academically and personally. I love exploring new technologies in IT. I enjoy coding small projects and learning from the stories of tech leaders. When I am not studying, I like working with digital art and design tools. Fashion and design are also important to me, and I admire Coco Chanel for her creativity. These activities help me express myself and connect with the world. I am curious and determined to make a difference in IT and design.                </p>
+            </section>
+            
+            <script>
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
+            </script>
+            
+
+        </main>
+
+        <footer>
+            <p style="font-family: 'Times New Roman', sans-serif;">Created by Turan Sadigli, Fatima Hasanzada, and Sanan Badalov</p>
+        </footer>
+    </body>
+</html>

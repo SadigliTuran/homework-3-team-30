@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- 
+    SITE 1101 Principles of Information Systems 
+    (c)202X by Name Surname 
+    Submitted in partial fulfillment of the requirements of the course.
+-->
+<html>
+    <head>
+        <title>Homework 3: Website project</title>
+        <link rel="stylesheet" href="styles.css">  
+        <script type="text/javascript" src="scripts.js"></script>
+
+        
+        <style>
+            .image-container {
+                position: relative;
+                display: inline-block;
+                overflow: hidden;
+                width: 80%;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+               
+            .zoomable-image {
+                width: 100%;
+                transition: transform 0.1s ease;
+                cursor: zoom-in;
+                transform-origin: 0 0;
+            }
+
+
+        </style>
+
+
+    </head>
+    <body>
+        <header>
+            <div id="logo-container">
+                <img src="Logowithoutbackground.png" alt="Project Logo" id="logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Introduction</a></li>
+                    <li><a href="hour-of-code.html">Hour of Code</a></li>
+                    <li><a href="team-members.html">Team Members</a></li>
+                    <li><a href="code-artist.html">Code Artist</a></li>
+                    <li><a href="web-project.html">Web Project</a></li>
+                </ul>
+            </nav>
+        </header>
+    
+        <main>
+            <h1 class="center-h1" style="font-family: 'Times New Roman', sans-serif;"><b>About Our Webpage Project</b></h1>
+    
+            <section id="overview">
+                <h2 style="font-family: 'Times New Roman', sans-serif;">Overview</h2>
+                <p>This webpage project was developed as part of our SITE 1101 course assignment. It showcases our understanding of HTML, CSS, and JavaScript, how we can apply them and displays our practical skills. We, as a group, designed this website accourding to instructions, which have been uploaded to the ADA's Blackboard: homework/assignments section.</p>
+                <img src="HW.png" alt="Overview Image" class="project-image" style="height: 400px; width: 800px;">
+            </section>
+    
+            <section id="purpose">
+                <h2 style="font-family: 'Times New Roman', sans-serif;">Purpose</h2>
+                <p style="font-family: 'Merriweather', sans-serif;">The purpose of this project is to illustrate our web development skills, applying what we have learned in Codecademy courses to create a visually appealing and interactive site.</p>
+            </section>
+    
+            <section id="technologies">
+                <h2 style="font-family: 'Times New Roman', sans-serif;">What did we use?</h2>
+                <ul>
+                    <li><strong>HTML:</strong> For structuring the webpage content.</li>
+                    <li><strong>CSS:</strong> To add styles and make the website visually appealing.</li>
+                    <li><strong>JavaScript:</strong> For interactivity, such as smooth scrolling and dynamic content.</li>
+                </ul>
+            </section>
+    
+            <section id="challenges">
+                <h2 style="font-family: 'Times New Roman', sans-serif;">Challenges Faced</h2>
+                <p style="font-family: 'Merriweather', sans-serif;">During development, we encountered challenges like ensuring proper responsiveness, implementing smooth scrolling, and linking external resources. These obstacles helped us refine our debugging skills.</p>
+                <div class="image-container">
+                    <img src="Challenges.png" alt="Challenges" class="zoomable-image">
+                </div>                
+            </section>
+
+            <script>
+                const imageContainer = document.querySelector('.image-container');
+                const zoomableImage = document.querySelector('.zoomable-image');
+            
+                imageContainer.addEventListener('mousemove', (event) => {
+                    const containerRect = imageContainer.getBoundingClientRect();
+                    const mouseX = event.clientX - containerRect.left;
+                    const mouseY = event.clientY - containerRect.top;
+            
+                    const xPercent = mouseX / containerRect.width;
+                    const yPercent = mouseY / containerRect.height;
+            
+                    zoomableImage.style.transform = `scale(2) translate(-${xPercent * 50}%, -${yPercent * 50}%)`;
+                });
+            
+                imageContainer.addEventListener('mouseleave', () => {
+                    zoomableImage.style.transform = 'scale(1)';
+                });
+            </script>
+
+
+    
+            <section id="conclusion">
+                <h2 style="font-family: 'Times New Roman', sans-serif;">Conclusion</h2>
+                <p style="font-family: 'Merriweather', sans-serif;">This project provided us with hands-on experience in web development. The project will be sent via Blackboard and will be graded after review by our Instructors. It was very nice experiment as a team to understand integration of HTML, CSS, and Javascript by practicing at the same time.</p>
+            </section>
+        </main>
+    
+        <footer>
+            <p style="font-family: 'Times New Roman', sans-serif;">Created by Turan Sadigli, Fatima Hasanzada, and Sanan Badalov</p>
+        </footer>
+    </body>
+</html>
